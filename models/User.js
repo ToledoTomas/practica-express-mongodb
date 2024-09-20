@@ -19,7 +19,12 @@ const userSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  roles: [],
+  roles: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Role",
+    },
+  ],
 });
 
 userSchema.statics.encryptPassword = async password => {
