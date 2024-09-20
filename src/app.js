@@ -4,10 +4,12 @@ import mongoose from "mongoose";
 import morgan from "morgan";
 import cors from "cors";
 import { config } from "dotenv";
+import { createRoles } from "../libs/initialSetup.js";
 
 config();
 
 const app = express();
+createRoles();
 
 app.use(express.json());
 app.use(cors());
