@@ -1,4 +1,4 @@
-import Product from "../models/Product";
+import Product from "../models/Product.js";
 
 export const postProduct = async data => {
   const { name, price, image } = data;
@@ -23,4 +23,17 @@ export const getProduct = async id => {
   const product = await Product.findOne({ _id: id });
   if (!product) throw new Error("Product not found");
   return product;
+};
+
+export const patchProduct = async (id, data) => {
+  const { name, price, image } = data;
+  const product = await getProduct(id);
+  const result = await product.updateOne({ name, price, image });
+  return result;
+};
+
+export const deleteProduct = async id => {
+  const product = await getProduct(id);
+  const result = await product.deleteOne();
+  return result;
 };

@@ -3,12 +3,16 @@ import {
   findProduct,
   findProducts,
   createProduct,
-} from "../controllers/productController";
+  updateProduct,
+  removeProduct,
+} from "../controllers/productController.js";
 
 const productRoutes = Router();
 
 productRoutes.get("/:id", findProduct);
 productRoutes.get("/", findProducts);
 productRoutes.post("/", createProduct);
+productRoutes.patch("/:id", updateProduct);
+productRoutes.delete("/:id", removeProduct);
 
 export default productRoutes;

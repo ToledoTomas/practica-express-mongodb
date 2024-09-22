@@ -1,4 +1,4 @@
-import { signIn } from "../handlers/loginHandler";
+import { signIn } from "../handlers/loginHandler.js";
 
 export const loginUser = async (req, res, next) => {
   const data = req.body;
