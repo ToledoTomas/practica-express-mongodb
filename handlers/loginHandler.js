@@ -19,7 +19,7 @@ export const signIn = async data => {
     throw new Error("Incorrect password");
   }
 
-  const token = jwt.sign({ id: userFound._id }, process.env.SECRET, {
+  const token = jwt.sign({ id: userFound._id }, process.env.SECRET_JWT, {
     expiresIn: 60 * 60 * 24,
   });
 

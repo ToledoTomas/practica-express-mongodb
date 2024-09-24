@@ -6,6 +6,7 @@ import {
   updateUser,
   removeUser,
 } from "../controllers/userController.js";
+import { verifyToken } from "../middlewares/authjwt.js";
 
 const userRoutes = Router();
 
